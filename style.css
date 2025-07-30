@@ -11,7 +11,7 @@
 }
 
 #dashLogo{
-    width: 40px;
+    width: 60px;
     filter: invert(100%);
 }
 
@@ -35,8 +35,24 @@ body{
     gap: 16px;
 }
 
+button{
+    background-color: royalblue;
+    color: white;
+    font-weight: 700;
+    border: none;
+    height: 3rem;
+    width: 6rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    margin: .5rem;
+}
+
+.buttons{
+    justify-self: end;
+}
+
 h1{
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .logo{
@@ -50,6 +66,67 @@ header{
     grid-row: 1/2;
     background-color: white;
     border-bottom: solid 2px royalblue;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 1rem;
+}
+
+.searchBar{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: space-between;
+    height: 50px;
+}
+
+input[type='text']{
+    background-color: lightblue;
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.user{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 60px 60px;
+    column-gap: 1rem;
+    row-gap: .5rem;
+
+}
+
+.user p{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    align-self: self-end;
+    font-weight: 700;
+}
+
+.user h6{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    font-size: 2rem;
+}
+
+input:focus{
+    outline: none;
+    border: solid royalblue 2px;
+    box-shadow: 1px 1px 2px grey;
+}
+
+.searchLeft{
+    display: grid;
+    grid-template-columns:25px 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.searchRight{
+    justify-self: end;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    align-items: center;
 }
 
 .pfp{
@@ -80,17 +157,18 @@ h6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     gap: 1.5rem;
+    position: relative;
 }
 
 .project{
     /* height: .3fr; */
     background-color: white;
+    box-shadow: inset royalblue 10px 0px 0px;
     border-radius: 12px;
     padding: 24px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: column;
-    box-shadow: inset royalblue 10px 0px 0px;
 }
 
 .project h6{
@@ -103,6 +181,8 @@ h6{
 
 .project .icons{
     grid-column: 3/4;
+    align-self: self-end;
+    justify-self: self-end;
 }
 
 .announcements{
@@ -114,6 +194,7 @@ h6{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 1rem;
+    position: relative;
 }
 
 .announcement{
@@ -134,6 +215,28 @@ h6{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 1rem;
+    position: relative;
+}
+
+.trending::before, .announcements::before, .projects::before{
+    position: absolute;
+    top: -2rem;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+.trending::before{
+    content: 'Trending';
+}
+
+.announcements::before{
+    content: 'Announcements';
+}
+
+.projects::before{
+    content: 'Your Projects';
+    left: 1.5rem;
 }
 
 .option{
@@ -181,4 +284,27 @@ p{
 
 .trend p{
     align-self: self-start;
+}
+
+header .icon{
+    filter: none;
+}
+
+.searchBar{
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.headerUser{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+
+.user .pfp{
+    width: 80px;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    align-self: center;
 }
